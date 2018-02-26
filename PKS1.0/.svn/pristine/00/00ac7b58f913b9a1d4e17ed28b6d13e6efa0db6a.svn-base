@@ -1,0 +1,17 @@
+bootstrap.memory_lock: false
+cluster.name: elasticsearch_szpks
+network.host: 0.0.0.0
+http.port: 9200
+node.data: true
+node.ingest: true
+node.master: true
+node.max_local_storage_nodes: 1
+node.name: node_szpks
+path.data: D:\PKSData\ElasticSearch\Data
+path.logs: D:\PKSData\ElasticSearch\Logs
+#path.repo: ["\\Sc-201706211141\es"]
+transport.tcp.port: 9300
+#开启跨域访问支持，默认为false
+http.cors.enabled: true
+#跨域访问允许的域名地址，(允许所有域名)以上使用正则
+http.cors.allow-origin: /.*/

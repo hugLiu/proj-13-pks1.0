@@ -1,0 +1,97 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //ViewBag.Title = "数据表格浏览器";
+}
+<script src="~/Scripts/dynamicBootstrapTable.js"></script>
+<script src="~/Content/lib/bootstrap-table/bootstrap-table.min.js"></script>
+<script>
+    
+    //BootstrapTable.prototype.mergeCells = function (options) {
+    //    var row = options.index,
+    //        col = $.inArray(options.field, this.getVisibleFields()),
+    //        rowspan = options.rowspan || 1,
+    //        colspan = options.colspan || 1,
+    //        i, j,
+    //        $tr = this.$body.find('>tr'),
+    //        $td;
+
+    //    if (this.options.detailView && !this.options.cardView) {
+    //        col += 1;
+    //    }
+
+    //    $td = $tr.eq(row).find('>td').eq(col);
+
+    //    if (row < 0 || col < 0 || row >= this.data.length) {
+    //        return;
+    //    }
+
+    //    for (i = row; i < row + rowspan; i++) {
+    //        for (j = col; j < col + colspan; j++) {
+    //            $tr.eq(i).find('>td').eq(j).hide();
+    //        }
+    //    }
+
+    //    $td.attr('rowspan', rowspan).attr('colspan', colspan).show();
+    //    $td.css('align', 'center');
+    //};
+</script>
+<link href="~/Content/lib/bootstrap-table/bootstrap-table.css" rel="stylesheet" />
+<link href="~/Content/styles/comment.css" rel="stylesheet" />
+<div class="row">
+    <div style="text-align:center">
+        <h1 id="title"></h1>
+    </div>
+    <div style="text-align:center;margin:20px 0px;">
+        <span>作者：</span><span id="author"></span>
+        <span style="margin-left:30px;">创建时间：</span><span id="createdate"></span>
+
+    </div>
+</div>
+<div  id="pkstablecontainer">
+    <pks:table :id="'pttable'" :datasource="datasource"></pks:table>
+   
+</div>
+<div id="remarkcontainer">
+    <pks:remark2 :id="'remark'" :iiid="iiid"></pks:remark2>
+</div>
+
+   
+<script>
+    
+    var config = @Html.Raw(ViewBag.data);
+    var tableData = config.dataSource ? JSON.parse(config.dataSource) : [];
+   
+    var vm = PKSUI.bind({
+        el: "#pkstablecontainer",
+        data: {
+            datasource: setBootstrapTableOptions(tableData)
+        },
+        model: 'pks:table'
+    });
+    var iiid = getPageParam("iiid");
+    if (iiid) {
+        var vm2 = PKSUI.bind({
+            el: "#remarkcontainer",
+            data: {
+                iiid: iiid
+            },
+            model: 'pks:remark2'
+        });
+    }
+
+
+    $(document).ready(function () {
+        $('#title').html(config.title);
+        document.title = config.title;
+        $('#author').html(config.author);
+        if (config.createddate) {
+            //$('#original_createdate').html(data.createdate);
+            var date = moment(config.createddate, "YYYY-MM-DDTHH:mm:ss.SSSZ").toDate();
+            $('#createdate').html(date.format("yyyy-MM-dd hh:mm:ss"));
+        }
+    });
+</script>
+
+
+

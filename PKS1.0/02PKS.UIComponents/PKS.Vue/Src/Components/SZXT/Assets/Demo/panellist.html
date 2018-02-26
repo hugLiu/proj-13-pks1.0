@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>筛选</title>
+    <link rel="stylesheet" href="../Js/lib/xvision/xvision.css">
+        <link rel="stylesheet" href="../Js/lib/bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+    <div id="el">
+         <pks:panellist :titles="titles" :onshowmore="onShowMore" :show="show">
+            <h1 slot="hello">hello</h1>
+            <h1 slot="world">world</h1>
+        </pks:panellist>
+    </div>
+    <script src="../Js/lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../Js/vendor.js"></script>
+    <script src="../Js/devUI.js"></script>
+    <script src="../Js/lib/xvision/xvision.js"></script>
+    <script type="text/javascript">
+       
+        PKSUI.bind({
+            el:"#el",
+            data:{
+                titles:['hello','world'],
+                show:true
+            },
+            methods:{
+                onShowMore:function(){
+                    alert("onshowmore");
+                }
+            },
+            model: "pks:panellist"
+        });
+
+    </script>
+</body>
+
+</html>

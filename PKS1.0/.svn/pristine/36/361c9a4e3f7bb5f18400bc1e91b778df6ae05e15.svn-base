@@ -1,0 +1,70 @@
+﻿{
+  "values": [
+    {
+      "pageid": "1",
+      "name": "PDF浏览",
+      "istemplate": true,
+      "isbaserender": true,
+      "storagetype": "Url",
+      "contentref": "/DataRender/PDF",
+      "system": "PORTAL",
+      "showtype": "Pdf",
+      "datatype": "Pdf"
+    },
+    {
+      "pageid": "2",
+      "name": "图片浏览",
+      "istemplate": true,
+      "isbaserender": true,
+      "storagetype": "Url",
+      "contentref": "/DataRender/Image",
+      "system": "PORTAL",
+      "showtype": "Image",
+      "datatype": "Image"
+    },
+    {
+      "pageid": "3",
+      "name": "Html浏览器",
+      "istemplate": true,
+      "isbaserender": true,
+      "storagetype": "Url",
+      "contentref": "/DataRender/Html",
+      "system": "PORTAL",
+      "showtype": "Html",
+      "datatype": "Html"
+    },
+    {
+      "pageid": "4",
+      "name": "数据表格浏览器",
+      "istemplate": true,
+      "isbaserender": true,
+      "storagetype": "Url",
+      "contentref": "/DataRender/Table",
+      "system": "PORTAL",
+      "showtype": "Table",
+      "datatype": "Json"
+    },
+    {
+      "pageid": "5",
+      "name": "柱状图浏览器",
+      "istemplate": true,
+      "isbaserender": true,
+      "storagetype": "Url",
+      "contentref": "/DataRender/Histogram",
+      "system": "PORTAL",
+      "showtype": "Chart",
+      "datatype": "Json"
+    },
+    {
+      "pageid": "6",
+      "name": "属性格浏览器",
+      "istemplate": true,
+      "isbaserender": true,
+      "storagetype": "Url",
+      "contentref": "/DataRender/PropertyGrid",
+      "system": "PORTAL",
+      "showtype": "PropertyGrid",
+      "datatype": "Json"
+    }
+  ]
+}

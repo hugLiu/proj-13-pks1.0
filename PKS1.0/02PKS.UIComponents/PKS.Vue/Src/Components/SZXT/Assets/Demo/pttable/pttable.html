@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>下拉</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="../../js/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../js/lib/bootstrap-table/bootstrap-table.css">
+
+    <script src="../../js/lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../../js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../js/lib/bootstrap-table/bootstrap-table.js"></script>
+
+      <script src="../../Js/vendor.js"></script>
+    <script src="../../Js/devUI.js"></script>
+
+</head>
+
+<body>
+    <div class="container" id="container">
+        
+        <pttable :id="'pttable'" :datasource="datasource" :columnoptions="columnoptions" :tableoptions="tableoptions"></pttable>
+     <div class="row">
+            <h1>通过赋值data加载数据</h1>
+            <p>
+                通过赋值data加载数据时，禁止服务端分页
+            <p>    data 返回数据格式：
+                {
+                    "字段1"："值1",
+                    "字段1"："值1",
+                    ...
+                }
+            </p>
+            <p>    dataSource为数组<br>
+                [<br>&nbsp;&nbsp;{<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;name:"", //tab页签名称<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;data:[] //为上方data<br>
+                 &nbsp;&nbsp;}<br>
+                  &nbsp;&nbsp;...<br>
+                ]
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    /*此示例演示通过赋值data加载数据*/
+    function getList(count) {
+        var list;
+        $.ajax({
+            url: '../../../Mock/pttable.json',
+            type: "get",
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                list = data;
+            },
+            error: function () {
+                alert("error");
+            }
+        });
+        return list;
+    }
+    var dataList = getList();
+
+    /*给组件提供data,如果显示分页，则客户端分页，data为所需要的全部数据*/
+    var vm = UIDev.bind({
+        el: "#container",
+        data: {
+            datasource: dataList,
+            tableoptions: [{
+                "name": "井1",
+                "tableoption": {
+                    maintainSelected: false,
+                    pageSize: 2,                   
+                    // pagination: false,
+                    // paginationDetailHAlign: "left",
+                    // paginationHAlign: "right",
+                    // paginationLoop: true,
+                    // paginationNextText: "&rsaquo;",
+                    // paginationPreText: "&lsaquo;",
+                    // paginationVAlign: "bottom",
+                     showPaginationSwitch: false,
+                    // singleSelect: false,
+                    sortable: true,
+                    totalField: "total",
+                    undefinedText: '-'
+                }
+            }],
+            columnoptions: [{
+                "name": "井1",
+                "columnoption": [
+                    [{
+                            "field": "name",
+                            "align": "center",
+                            "order": "asc",
+                            "radio": false,
+                            "sortable": false,
+                            "title": "名称name",
+                            rowspan: 2
+                        },
+                        {
+                            align:"center",
+                            title: "信息",
+                            colspan:3
+                        }
+                    ],
+                    [ {
+                            field: "createdtime",
+                            title: "日期"
+                        },
+                        {
+                            field: "username",
+                            title: "用户名"
+                        },
+                        {
+                            field: "address",
+                            title: "地址"
+                        }
+                    ]
+                ]
+            }, {
+                "name": "井2",
+                "columnoption": [
+                    [{
+                            "field": "name",
+                            "align": "center",
+                            "order": "asc",
+                            "radio": false,
+                            "sortable": false,
+                            "title": "名称name"
+                        },
+                        {
+                            field: "createdtime",
+                            title: "日期"
+                        },
+                        {
+                            field: "username",
+                            clickToSelect: true,
+                            title: "用户名"
+                        },
+                        {
+                            field: "address",
+                            title: "地址"
+                        }
+                    ]
+                ]
+            }]
+        },
+        model: 'pttable'
+    });
+</script>
+

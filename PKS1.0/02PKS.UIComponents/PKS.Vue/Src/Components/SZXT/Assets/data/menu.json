@@ -1,0 +1,352 @@
+{
+    {
+      "id": 1,
+      "Key": "HOME_DASHBOARD",
+      "Name": "首页",
+      "URL": "",
+      "HasThird": false,
+      "Target": "_blank",
+      "Children": [
+      ]
+    },
+    {
+      "id": 2,
+      "Key": "Key2",
+      "Name": "勘探信息共享",
+      "URL": "",
+      "HasThird": false,
+      "Target": "_self",
+      "Children": [
+        {
+          "id": 11,
+          "Key": "Key21",
+          "Name": "勘探概况",
+          "URL": "http://www.sina.com.cn",
+          "HasThird": true,
+          "Target": "_self",
+          "Children": [
+          ]
+        },
+        {
+          "id": 12,
+          "Key": "Key22",
+          "Name": "勘探动态",
+          "URL": "Default2.aspx",
+          "HasThird": true,
+          "Target": "_self",
+          "Children": [
+            {
+              "id": 13,
+              "Key": "Key_003_02_01",
+              "Name": "钻井作业",
+              "URL": "Default3.aspx",
+              "HasThird": true,
+              "Target": "_self"
+            },
+            {
+              "id": 14,
+              "Key": "Key_003_02_02",
+              "Name": "录井作业",
+              "URL": "",
+              "HasThird": false,
+              "Target": "_blank"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "Key": "Key3",
+      "Name": "勘探研究流程",
+      "URL": "",
+      "HasThird": false,
+      "Target": "_blank",
+      "Children": [
+      ]
+    },
+    {
+      "id": 4,
+      "Key": "Key_004",
+      "Name": "勘探知识库",
+      "URL": "",
+      "HasThird": false,
+      "Target": "_blank",
+      "Children": [
+        {
+          "id": 15,
+          "Key": "Key_4_1",
+          "Name": "概况",
+          "URL": "",
+          "HasThird": false,
+          "Target": "_blank",
+          "Children": [
+          ]
+        },
+        {
+          "id": 16,
+          "Key": "Key_4_1",
+          "Name": "勘探目标认识",
+          "URL": "",
+          "HasThird": false,
+          "Target": "_blank",
+          "Children": [
+            {
+              "id": 17,
+              "Key": "Key_003_02_01",
+              "Name": "井",
+              "URL": "",
+              "HasThird": false,
+              "Target": "_blank"
+            },
+            {
+              "id": 18,
+              "Key": "Key_003_02_02",
+              "Name": "地震矿区",
+              "URL": "http://www.sina.com.cn",
+              "HasThird": true,
+              "Target": "_blank"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "Key": "Key_005",
+      "Name": "勘探生产管理",
+      "URL": "",
+      "HasThird": true,
+      "Target": "_blank",
+      "Children": [
+      {
+          "id": 11,
+          "Key": "Key21",
+          "Name": "勘探概况",
+          "URL": "http://www.sina.com.cn",
+          "HasThird": true,
+          "Target": "_self",
+          "Children": [
+          ]
+        },
+	{
+          "id": 11,
+          "Key": "Key21",
+          "Name": "勘探概况",
+          "URL": "http://www.sina.com.cn",
+          "HasThird": true,
+          "Target": "_self",
+          "Children": [
+          ]
+        },
+	{
+          "id": 11,
+          "Key": "Key21",
+          "Name": "勘探概况",
+          "URL": "http://www.sina.com.cn",
+          "HasThird": true,
+          "Target": "_self",
+          "Children": [
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "Key": "Key_006",
+      "Name": "勘探决策支持",
+      "URL": "",
+      "HasThird": false,
+      "Target": "_blank",
+      "Children": [
+      ]
+    },
+    {
+      "id": 7,
+      "Key": "Key_007",
+      "Name": "勘探综合办公室",
+      "URL": "",
+      "HasThird": false,
+      "Target": "_blank",
+      "Children": [
+      ]
+    },
+    {
+      "id": 8,
+      "Key": "Key_008",
+      "Name": "勘探社区",
+      "URL": "",
+      "HasThird": false,
+      "Target": "_blank",
+      "Children": [
+      ]
+    },
+    {
+      "id": 9,
+      "Key": "Key_009",
+      "Name": "石油百科",
+      "URL": "",
+      "HasThird": false,
+      "Target": "_blank",
+      "Children": [
+      {
+          "id": 11,
+          "Key": "Key21",
+          "Name": "勘探概况",
+          "URL": "http://www.sina.com.cn",
+          "HasThird": true,
+          "Target": "_self",
+          "Children": [
+	  {
+          "id": 11,
+          "Key": "Key21",
+          "Name": "勘探概况",
+          "URL": "http://www.sina.com.cn",
+          "HasThird": true,
+          "Target": "_self",
+          "Children": [
+          ]
+        }
+          ]
+        },
+	{
+          "id": 11,
+          "Key": "Key21",
+          "Name": "勘探概况",
+          "URL": "http://www.sina.com.cn",
+          "HasThird": true,
+          "Target": "_self",
+          "Children": [
+          ]
+        },
+	{
+          "id": 11,
+          "Key": "Key21",
+          "Name": "勘探概况",
+          "URL": "http://www.sina.com.cn",
+          "HasThird": true,
+          "Target": "_self",
+          "Children": [
+          ]
+        },
+	{
+          "id": 11,
+          "Key": "Key21",
+          "Name": "勘探概况",
+          "URL": "http://www.sina.com.cn",
+          "HasThird": true,
+          "Target": "_self",
+          "Children": [
+          ]
+        },
+	{
+          "id": 11,
+          "Key": "Key21",
+          "Name": "勘探概况",
+          "URL": "http://www.sina.com.cn",
+          "HasThird": true,
+          "Target": "_self",
+          "Children": [
+          ]
+        },
+	{
+          "id": 11,
+          "Key": "Key21",
+          "Name": "勘探概况",
+          "URL": "http://www.sina.com.cn",
+          "HasThird": true,
+          "Target": "_self",
+          "Children": [
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "Key": "Key_010",
+      "Name": "标准规范",
+      "URL": "http://www.sina.com.cn",
+      "HasThird": false,
+      "Target": "_self",
+      "Children": [
+      {
+          "id": 11,
+          "Key": "Key21",
+          "Name": "勘探概况",
+          "URL": "http://www.sina.com.cn",
+          "HasThird": true,
+          "Target": "_self",
+          "Children": [
+          ]
+        },
+	{
+          "id": 11,
+          "Key": "Key21",
+          "Name": "勘探概况",
+          "URL": "http://www.sina.com.cn",
+          "HasThird": true,
+          "Target": "_self",
+          "Children": [
+	  {
+          "id": 11,
+          "Key": "Key21",
+          "Name": "勘探概况",
+          "URL": "http://www.sina.com.cn",
+          "HasThird": true,
+          "Target": "_self"
+          
+        },
+	{
+          "id": 11,
+          "Key": "Key21",
+          "Name": "勘探概况",
+          "URL": "http://www.sina.com.cn",
+          "HasThird": true,
+          "Target": "_self"
+     
+        }
+          ]
+        },
+	{
+          "id": 11,
+          "Key": "Key21",
+          "Name": "勘探概况",
+          "URL": "http://www.sina.com.cn",
+          "HasThird": true,
+          "Target": "_self",
+          "Children": [
+          ]
+        },
+	{
+          "id": 11,
+          "Key": "Key21",
+          "Name": "勘探概况",
+          "URL": "http://www.sina.com.cn",
+          "HasThird": true,
+          "Target": "_self",
+          "Children": [
+          ]
+        },
+	{
+          "id": 11,
+          "Key": "Key21",
+          "Name": "勘探概况",
+          "URL": "http://www.sina.com.cn",
+          "HasThird": true,
+          "Target": "_self",
+          "Children": [
+          ]
+        },
+	{
+          "id": 11,
+          "Key": "Key21",
+          "Name": "勘探概况",
+          "URL": "http://www.sina.com.cn",
+          "HasThird": true,
+          "Target": "_self",
+          "Children": [
+          ]
+        }
+      ]
+    }
+}

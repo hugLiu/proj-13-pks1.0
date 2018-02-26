@@ -1,0 +1,59 @@
+﻿
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" href="../Js/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../Js/lib/bootstrap/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="../Css/head-nav-2.css" />
+</head>
+<body>
+    <div id="el" class="header">
+        <pks:header :redirectgissys="redirectgissys" :redirectsysmgr="redirectsysmgr" :redirectmessage="redirectmessage" :messagecount="messagecount" :searchknowledge="searchknowledge" :settingfunsys="settingfunsys" :logout="logout" :imgsource="imgsource" :logosource="logosource" ref="content"></pks:header>
+        <pks:menu :apipath="apipath"></pks:menu>
+    </div>
+    <script src="../Js/vendor.js"></script>
+    <script src="../Js/devUI.js"></script>
+   <script src="../Js/lib/jquery/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript">
+        PKSUI.bind({
+            el: "#el",
+            data: {
+                messagecount: "6",//消息数量
+                imgsource: "../Img/icon01.jpg",//用户图标
+                currentuser: "test",//当前用户名
+                logosource: "../Img/logo.png",//logo
+                apipath: "http://localhost:8801/api/SecurityService/GetPortalMenu?roleId=1"
+            },
+            model: ["pks:header","pks:menu"],
+            methods: {
+                redirectgissys: function ()
+                {
+                    alert("gis interface");
+                },
+                redirectsysmgr: function ()
+                {
+                    alert("sysmanager interface");
+                },
+                redirectmessage: function ()
+                {
+                    alert("message interface");
+                },
+                settingfunsys: function () {
+                    alert("setting interface");
+                },
+                searchknowledge: function ()
+                {
+                    alert(this.$refs.content.$refs.txtSearch.value);
+                },
+                logout: function ()
+                {
+                    alert("logoout interface");
+                }
+                
+            }
+        });
+    </script>
+</body>
+</html>

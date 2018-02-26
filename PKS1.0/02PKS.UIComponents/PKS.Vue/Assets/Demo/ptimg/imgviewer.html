@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>图片展示</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="../../js/lib/viewer/viewer.css">
+    <link rel="stylesheet" href="../../js/lib/xvision/xvision.css">
+    <script src="../../js/lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../../js/lib/viewer/viewer.min.js"></script>
+	
+    <script src="../../js/vendor.js"></script>
+    <script src="../../js/devUI.js"></script>
+    <style>
+        .jurassic-listbox {
+            float: left;
+            margin:10px 15px;
+            padding: 10px;
+            padding-bottom: 0px;
+            background: #f6f6f6;
+            border-radius: 5px;
+            width: 260px;
+            position: relative;
+            list-style-type: none;
+        }
+        
+        .jurassic-listimg {
+            float: left;
+            width: 260px;
+            height: 165px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .jurassic-listimg>img {
+            background-color: #333;
+            width: 240px;
+            height: 165px;
+            top: 0;
+            left: 0;
+        }
+        
+        .jurassic-img {
+            border: 0 none;
+            vertical-align: top;
+        }
+        
+        .jurassic-iteminfo {
+            top: 165px;
+            text-align: center
+        }
+        .jurassic-iteminfo p {
+            overflow-x: hidden;
+            text-overflow: ellipsis;
+            padding: 0px 20px;
+            margin-top: 15px;
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ptimgcontainer" class="jurassic-row">
+        <pks:imgviewer :data="data" :map="map" :onclick="onclick"></pks:imgviewer>
+        <div @click="onchange">change</div>
+    </div>
+</body>
+</html>
+<script>
+    var item={src:"./img/tibet-2.jpg",thumbnail:"./img/thumbnails/tibet-1.jpg",title:"BYYiiiiiiiiiiiiiiiiiiiiihhhhhhhhhhhhhhhhhhhhhhhhhhh",iiid:"by829111"};
+    var item2={url:"./img/tibet-2.jpg",title:"BYY",iiid:"by82"};
+    var items1=[
+       item,item,item,item,item,item,item,item,item,item,item,item
+    ];
+    var items2=[
+       item2,item2,item2
+    ];
+    var vm = PKSUI.bind({
+        el: "#ptimgcontainer",
+        data: {
+            data:[],
+            map:{"url":"src","thumbnail":"thumbnail","bottom":"title","param":"iiid"}
+        
+        },
+        methods:{
+            onclick:function(e){
+                alert(e);
+            },
+            onchange:function(){
+                 vm.data=items1;
+            }
+        },
+        model: 'pks:imgviewer'
+    });
+</script>

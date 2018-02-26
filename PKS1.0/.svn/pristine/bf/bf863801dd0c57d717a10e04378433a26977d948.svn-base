@@ -1,0 +1,89 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登录</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link href="~/Content/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/css/global.css" rel="stylesheet" />
+    <link href="~/Content/css/login.css" rel="stylesheet" />
+    <script src="~/Content/jquery/jquery-3.1.1.min.js"></script>
+    <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        .loginForm_bg {
+            background-color: #346FBB;
+        }
+
+        .loginForm_loginbg {
+            background-image: url("../../Content/css/images/login/login_sz.png");
+        }
+    </style>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="container-fluid lg">
+            <div class="logintitle">
+                <div class="logo">
+                    <p class="p2" style="padding-top:5px;">中海石油（中国）有限公司深圳分公司</p>
+                    <p class="p1" style="padding-top:0px;">智能勘探工作平台</p>
+                </div>
+            </div>
+            <div class="login">
+                <div class="loginForm_bg">
+                    <div class="loginForm_loginbg">
+                        <div class="loginForm">
+                            <div class="form_username" for="username$text">
+                                <span class="mini-textbox mini-required" id="UserName" style="border-width: 0px; width: 100%; padding: 0px;">
+                                    <span class="mini-textbox-border">
+                                        <input type="text" class="mini-textbox-input" autocomplete="off" placeholder="用户名" id="userName" name="userName">
+                                    </span>
+                                </span>
+                            </div>
+                            <div id="UserName_error" class="showTips"><div class="warning"></div></div>
+                            <div class="form_password " for="pwd$text">
+                                <span class="mini-textbox mini-password mini-required mini-error" id="Password" style="border-width: 0px; width: 100%; padding: 0px;">
+                                    <span class="mini-textbox-border">
+                                        <input type="password" class="mini-textbox-input" autocomplete="off" placeholder="密码" id="password" name="password">
+                                    </span>
+                                    <span class="mini-errorIcon" title="密码为空" data-placement="right">
+                                    </span>
+                                </span>
+                            </div>
+                            <div id="Password_error" class="showTips"></div>
+                            <div class="login_RememberMe">
+                                <input type="hidden" value="false" name="RememberMe" id="RememberMe">
+                                <span class="mini-checkbox" id="chkRememberMe" style="border-width: 0px;">
+                                    <input id="rememberMe" name="rememberMe" type="checkbox" class="mini-checkbox-check" checked="checked" value="true" />
+                                    <label for="mini-3$check" onclick="return false;">记住我</label>
+                                </span>
+                                <a href="/Account/Forgotpassword" class="frame-submit" style="float:right; padding-top:2px;display:none;">忘记密码</a>
+                            </div>
+                            <a class="mini-button frame-submit frame-default" href="javascript:submit()" id="btnLogin">
+                                <span class="mini-button-text " style="">
+                                    <div class="loginButton" id="loginText">登录</div>
+                                </span>
+                            </a>
+                            <div id='login-error' class="error-tip" style="color:red;margin-top:5px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer" style="display:none;">
+                <div class="footerlogo"></div>
+                <div class="footertext">
+                    <ul class="list-unstyled">
+                        <li>Copyright © 2014 - 2017 Jurassic, all rights reserved</li>
+                        <li>地址：北京市海淀区学清路9号汇智大厦B座9层 电话：010-82730099</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <input id="returnUrl" type="hidden" name="returnUrl" value="@ViewBag.ReturnUrl">
+    }
+    <script src="~/Scripts/login/login.js"></script>
+</body>
+</html>

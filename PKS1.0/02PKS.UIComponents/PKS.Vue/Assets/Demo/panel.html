@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>筛选</title>
+    <link rel="stylesheet" href="../Js/lib/xvision/xvision.css">
+        <link rel="stylesheet" href="../Js/lib/bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+    <div id="el">
+        <pks:panel :title="title" :onshowmore="onShowMore" :show="show">
+            <h1 slot="panel">标题面板</h1>
+        </pks:panel>
+    </div>
+    <script src="../Js/lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../Js/vendor.js"></script>
+    <script src="../Js/devUI.js"></script>
+    <script src="../Js/lib/xvision/xvision.js"></script>
+    <script type="text/javascript">
+       
+        PKSUI.bind({
+            el:"#el",
+            data:{
+                title:"油气井新发现",
+                show:true
+            },
+            methods:{
+                onShowMore:function(){
+                    alert("onshowmore");
+                }
+            },
+            model: "pks:panel"
+        });
+
+    </script>
+</body>
+
+</html>

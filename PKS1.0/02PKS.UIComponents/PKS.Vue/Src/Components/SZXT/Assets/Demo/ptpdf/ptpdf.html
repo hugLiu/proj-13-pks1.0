@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="google" content="notranslate">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PDF.js viewer</title>
+     <!--<script src="../../Js/vendor.js"></script>
+    <script src="../../Js/devUI.js"></script>-->
+
+  <script src="http://localhost:5012/Content/vendor.js"></script>
+    <script src="http://localhost:5012/Content/portal.js"></script>
+    <script src="../../js/lib/iframeresizer/iframeresizer.min.js"></script>
+</head>
+
+<body>
+    <div id="ptpdfcontainer" style="width:100%;height:500px">
+        <pks:pdf :pdfpath="'/assets/demo/ptpdf/UML和模式应用(原书第3版).pdf'" :id="'mypdf'"></pks:pdf>
+    </div>
+
+</body>
+
+</html>
+<script>
+    var vm = PKSUI.bind({
+        el: "#ptpdfcontainer",       
+        model: 'pks:pdf'
+    });
+
+
+    /*
+     * If you do not understand what the code below does, then please just use the
+     * following call in your own code.
+     *
+     *   iFrameResize({log:true});
+     *
+     * Once you have it working, set the log option to false.
+     */
+
+    iFrameResize({
+        log: true, // Enable console logging
+        inPageLinks: true,
+        resizedCallback: function (messageData) { // Callback fn when resize is received
+            //$('p#callback').html(
+            //    '<b>Frame ID:</b> ' + messageData.iframe.id +
+            //    ' <b>Height:</b> ' + messageData.height +
+            //    ' <b>Width:</b> ' + messageData.width +
+            //    ' <b>Event type:</b> ' + messageData.type
+            //);
+        },
+        messageCallback: function (messageData) { // Callback fn when message is received
+            //$('p#callback').html(
+            //    '<b>Frame ID:</b> ' + messageData.iframe.id +
+            //    ' <b>Message:</b> ' + messageData.message
+            //);
+            //alert(messageData.message);
+            //document.getElementsByTagName('iframe')[0].iFrameResizer.sendMessage('Hello back from parent page');
+        },
+        closedCallback: function (id) { // Callback fn when iFrame is closed
+            //$('p#callback').html(
+            //    '<b>IFrame (</b>' + id +
+            //    '<b>) removed from page.</b>'
+            //);
+        }
+    });
+</script>

@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>筛选</title>
+    <link rel="stylesheet" href="../Js/lib/xvision/xvision.css">
+        <link rel="stylesheet" href="../Js/lib/bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+    <div id="el">
+        <pks:list :listdata="listdata"  :onclick="onclicks">
+        </pks:list>
+    </div>
+    <script src="../Js/lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../Js/vendor.js"></script>
+    <script src="../Js/devUI.js"></script>
+    <script src="../Js/lib/xvision/xvision.js"></script>
+    <script type="text/javascript">
+        var _listdata = {
+            "map": { "left": "title",  "url": "iiid" },
+            "list": [{ "title": "hello",  "iiid": "well001" },
+            { "title": "hello1", "iiid": "well0013" }]
+        };
+        PKSUI.bind({
+            el: "#el",
+            data: {
+                listdata: _listdata,
+            },
+            methods: {
+                onclicks: function (e) {
+                    alert(e);
+                }
+            },
+            model: "pks:list"
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+﻿[
+  {
+    "Id": "1",
+    "Name": "admin",
+    "FunctionIds": []
+  },
+  {
+    "Id": "2",
+    "Name": "业务部",
+    "FunctionIds": []
+  },
+  {
+    "Id": "3",
+    "Name": "研究部",
+    "FunctionIds": []
+  },
+  {
+    "Id": "4",
+    "Name": "信息部",
+    "FunctionIds": []
+  },
+  {
+    "Id": "6",
+    "Name": "知识管理部",
+    "FunctionIds": []
+  }
+]

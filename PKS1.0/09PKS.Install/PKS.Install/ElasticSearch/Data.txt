@@ -1,0 +1,72 @@
+PUT /szpks
+
+POST /szpks/metadata?pretty
+{
+  "iiid":"test",
+  "indexeddate":"2017-08-03T14:49:59",
+  "thumbnail":null,
+  "fulltext":null,
+  "pageid":"test",
+  "dataid":"test",
+  "dsn":"test",
+  "showtype":"Image",
+  "title":"test",
+  "subject":["test"],
+  "abstract":"test",
+  "catalogue":"test",
+  "author":"test",
+  "submitter":"test",
+  "auditor":"test",
+  "createddate":"2017-05-08T08:00:00.000",
+  "submitteddate":"2017-05-08T08:00:00.000",
+  "auditteddate":"2017-05-08T08:00:00.000",
+  "status":"已审核",
+  "frequency":null,
+  "period":null,
+  "basin":[],
+  "firstlevel":[],
+  "secondlevel":[],
+  "trap":[],
+  "well":["test"],
+  "swa":[],
+  "miningarea":[],
+  "cozone":[],
+  "project":[],
+  "pc":null,
+  "pt":"test",
+  "bd":[],
+  "bt":[],
+  "bp":[],
+  "ba":[],
+  "bf":[],
+  "system":"test",
+  "resourcetype":"test",
+  "resourcekey":"test"
+}
+
+POST szpks/userbehavior?pretty
+{
+  "type":"浏览",
+  "iiid":"test",
+  "title":"test",
+  "url":"/render/pdf?dataid=test",
+  "referer":"/Sooil/List",
+  "system":"SZXT",
+  "logdate":"2017-07-18T11:37:00.000",
+  "user":"test",
+  "role":"test"
+}
+
+GET /szpks/_search
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+POST /szpks/_delete_by_query
+{
+  "query": { 
+    "match_all": {}
+  }
+}

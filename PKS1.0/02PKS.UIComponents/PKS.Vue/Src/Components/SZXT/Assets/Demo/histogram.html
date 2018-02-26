@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<HTML>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div id="el" style="width: 600px;height:300px;">
+        <pks:histogram  :data="data" fontsize="16" barwidth="13"  :titlelocation="titlelocation" :legendstyle="legendstyle"></pks:histogram>
+    </div>
+    <script src="../Js/lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../Js/vendor.js"></script>
+    <script src="../Js/devUI.js"></script>
+    <script>
+        var data1 = {
+            "setting": {
+                "title": "钻井完成情况统计图",
+                "smooth": true,
+                "defaultchart": "bar",
+                "chart": ["bar", "line", "bar", "bar"],
+                "legend": ["设计", "已开钻", "油气层井", "油气流井"],
+                "yaxiscaption": "井数（口）",
+                "xaxisfield": "bo"
+            },
+            "columns": [{
+                "field": "bo",
+                "title": "目标区",
+                "type": "String",
+                "format": ""
+            }, {
+                "field": "A",
+                "title": "设计",
+                "type": "String",
+                "format": ""
+            }, {
+                "field": "B",
+                "title": "已开钻",
+                "type": "String",
+                "format": ""
+            }, {
+                "field": "C",
+                "title": "油气层井",
+                "type": "String",
+                "format": ""
+            }, {
+                "field": "D",
+                "title": "油气流井",
+                "type": "String",
+                "format": ""
+            }],
+            "rows": [["白云深水", 5, 4, 2, 1],
+            ["惠州", 3, 3, 1, 1],
+            ["陆丰", 4, 2, 2, 0],
+            ["韩江", 3, 2, 1, 1],
+            ["恩平", 2, 1, 0, 1],
+            ["西江", 3, 2, 2, 1],
+            ["合作区", 8, 5, 2, 1]]
+        };
+        PKSUI.bind({
+            el: "#el",
+            data: {
+                maintitle: "探明储量完成情况",
+                data: data1,
+                smooth: true,
+                titlelocation: ["center", "bottom"],
+                legendstyle: ["center", "top", "horizontal"]
+            },
+            model: "pks:histogram",
+        });
+    </script>
+</body>
+
+</HTML>

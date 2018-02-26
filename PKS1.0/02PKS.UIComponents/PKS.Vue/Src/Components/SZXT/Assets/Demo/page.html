@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>分页</title>
+    <link rel="stylesheet" href="../Js/lib/xvision/xvision.css">
+    <link rel="stylesheet" href="../Js/lib/bootstrap/css/bootstrap.css">
+    <style>
+        .pager a,
+        .pager span,
+        .pager input {
+            display: inline;
+            float: left;
+        }
+        
+        .pager .active {
+            background-color: bisque;
+        }
+        
+        .pager a,
+        .pager span {
+            width: 45px;
+            height: 36px;
+            border: 1px solid bisque;
+            border-right: none;
+            text-align: center;
+            line-height: 36px;
+            background: #f6f6f6;
+            font-size: 15px;
+            color: gray;
+        }
+        
+        .pager input.jump-ipt {
+            width: 35px;
+            height: 22px;
+            margin: 8px 20px;
+            border: 1px solid lightgrey;
+        }
+        
+        .pager a:hover {
+            cursor: pointer;
+            text-decoration: none;
+            background-color: bisque;
+        }
+        
+        .pager .next {
+            border-right: 1px solid bisque;
+        }
+        
+        .pager>a.jump-btn {
+            width: 50px;
+            border-right: 1px solid bisque;
+            text-decoration: none;
+        }
+        
+        .pager>a.jump-btn:hover {
+            cursor: pointer;
+            background-color: bisque;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="el" style="padding:10px;text-align: center;">
+        <div style="display: inline-block;">
+            <pks:pager :current="current" :totaldata="totaldata" :pagesize="pagesize" :onclick="onclick"></pks:pager>
+        </div>
+    </div>
+    <script src="../Js/lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../Js/lib/jquery/jquery.pagination.js"></script>
+    <script src="../Js/vendor.js"></script>
+    <script src="../Js/devUI.js"></script>
+    <script src="../Js/lib/xvision/xvision.js"></script>
+    <script type="text/javascript">
+        PKSUI.bind({
+            el: "#el",
+            data:{
+                pagesize:5,
+                totaldata:123,
+                current:1
+            },
+            methods: {
+                onclick: function (e) {
+                    alert(e);
+                }
+            },
+            model: "pks:pager"
+        });
+    </script>
+</body>
+
+</html>

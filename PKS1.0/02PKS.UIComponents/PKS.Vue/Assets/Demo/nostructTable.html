@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>筛选</title>
+    <link rel="stylesheet" href="../Js/lib/xvision/xvision.css">
+        <link rel="stylesheet" href="../Js/lib/bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+    <div id="el">
+        <pks:nostructtable :wellPosition="data1" :wellData="data2" :wellTotal="data3">
+        </pks:nostructtable>
+    </div>
+    <script src="../Js/lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../Js/vendor.js"></script>
+    <script src="../Js/devUI.js"></script>
+    <script src="../Js/lib/xvision/xvision.js"></script>
+    <script type="text/javascript">
+       
+        PKSUI.bind({
+            el:"#el",
+            data:{
+                data1: [{ welltype: "预探井", east: "225", eastx: "346347", north: "20", northy: "2240076", position: "在香港南西方向约280公里", welldepth: "-4300", seadepth: "573", layer: "珠海组" }],
+                data2: [{ sglayer: "粤海组", layer: "SB10.5", reflecttime: "", depth: "-1495", traparea: "", gas: "223", oil: "2323" }, { sglayer: "深圳组", layer: "SB10.5", reflecttime: "", depth: "-1495", traparea: "", gas: "223", oil: "2323" }],
+                data3: "3444"
+            },
+            model: "pks:nostructtable"
+        });
+
+    </script>
+</body>
+
+</html>

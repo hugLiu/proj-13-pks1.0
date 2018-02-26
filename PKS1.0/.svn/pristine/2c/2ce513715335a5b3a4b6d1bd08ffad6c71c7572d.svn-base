@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>下拉</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="../../js/lib/bootstrap/css/bootstrap.min.css">  
+ 
+    <script src="../../js/lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../../js/lib/bootstrap/js/bootstrap.min.js"></script>
+	
+    <script src="../../js/vendor.js"></script>
+    <script src="../../js/UIDev.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4" id="ptimgcontainer" style="margin-top:10px">
+                <pthtml :id="'Myhtml'" :class="cls" :template="template" :templatedata="templateData"></pthtml>
+            </div>
+            <div class="col-md-4" id="ptimgcontainer2" style="margin-top:10px">
+                <pthtml :id="'Myhtml2'" :class="cls" :template="template" :templatedata="templateData"></pthtml>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+   var templateData={
+       "userid":1,
+       "username":"jurassic",
+       "company":"侏罗纪"
+   }
+    var vm = UIDev.bind({
+        el: "#ptimgcontainer",
+        data: {
+            cls:'MyHTML',
+            template:'<div style="width:200px;height:200px;border:solid 1px red;"><p>用户名：{{username}}<p>公司：{{company}}</p><p>地址{{address}}</p></div>',
+            templateData:templateData
+        },
+        model: 'pthtml'
+    });
+
+ var templateDataList=[{
+       "userid":1,
+       "username":"jurassic",
+       "company":"侏罗纪"
+   },
+   {
+       "userid":2,
+       "username":"jurassic2",
+       "company":"侏罗纪"
+   },
+   {
+       "userid":3,
+       "username":"jurassic3",
+       "company":"侏罗纪"
+   }
+   ];
+    var vm = UIDev.bind({
+        el: "#ptimgcontainer2",
+        data: {
+            cls:'MyHTML2',
+            template:'<div style="border:solid 1px red;"><p>用户名：{{username}}<p>公司：{{company}}</p><p>地址{{address}}</p></div>',
+            templateData:templateDataList
+        },
+        model: 'pthtml'
+    });
+</script>

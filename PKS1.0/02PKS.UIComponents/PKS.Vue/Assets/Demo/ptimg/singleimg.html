@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>图片展示</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="../../js/lib/viewer/viewer.css">
+    <link rel="stylesheet" href="../../js/lib/xvision/xvision.css">
+    <script src="../../js/lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../../js/lib/viewer/viewer.min.js"></script>
+	
+    <script src="../../js/vendor.js"></script>
+    <script src="../../js/devUI.js"></script>
+    <script src="../../js/lib/viewer/viewer.js"></script>
+    <style>
+        .jurassic-singleimg {
+            float: left;
+            margin:10px 15px;
+            padding: 10px;
+            padding-bottom: 0px;
+            background: #f6f6f6;
+            position: relative;
+            list-style-type: none;
+            border-radius: 5px;
+        }
+        .jurassic-singleimg-bottom {
+            text-align: center
+        }
+        .jurassic-singleimg-bottom p {
+            overflow-x: hidden;
+            text-overflow: ellipsis;
+            padding: 0px 20px;
+            margin-top: 15px;
+            color: gray;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ptimgcontainer" class="jurassic-row">
+        <pks:singleimg :item="data" height="400px;" width="1000px" :map="map" :onclick="onclick"></pks:singleimg>
+        <div @click="onchange">change</div>
+    </div>
+</body>
+</html>
+<script>
+     var item={url:"./img/tibet-1.jpg",thumbnail:"./img/thumbnails/tibet-1.jpg",title:"BYYiiiiiiiiiiiiiiiiiiiiihhhhhhhhhhhhhhhhhhhhhhhhhhh",iiid:"by829111"};
+    var item2={url:"./img/tibet-2.jpg",title:"BYY",iiid:"by82"};
+    
+    var vm = PKSUI.bind({
+        el: "#ptimgcontainer",
+        data: {
+            data:item2,
+            map:{"url":"url","thumbnail":"thumbnail","bottom":"title","param":"iiid"},
+            booldata:true
+        
+        },
+        methods:{
+            onclick:function(e){
+                alert(e);
+            },
+            onchange:function(){
+                vm.booldata=!vm.booldata;
+                if(vm.booldata){
+                    vm.data={};
+                }else{
+                    vm.data=item;
+                }
+            }
+        },
+        model: 'pks:singleimg'
+    });
+</script>

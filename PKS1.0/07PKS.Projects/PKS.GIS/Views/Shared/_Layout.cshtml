@@ -1,0 +1,29 @@
+﻿@using PKS.Web;
+@{
+    var webApiSiteUrl = this.Context.GetSubSystemUrl(PKS.Models.PKSSubSystems.WEBAPI);
+    var portalSiteUrl = this.Context.GetSubSystemUrl(PKS.Models.PKSSubSystems.Portal);
+    var webApiToken = this.Context.GetToken();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+    
+    <script src="~/Content/scripts/jquery-2.0.3.min.js"></script>
+    @*WebAPI脚本*@
+    <script src="@webApiSiteUrl/Scripts/PKSGlobalStore.js"></script>@*错误日志*@
+    <script>
+        pksGlobalStore.init("@webApiSiteUrl", "@webApiToken");
+        pksGlobalStore.config.portalSiteUrl = "@portalSiteUrl";
+    </script>
+    @*WebAPI脚本*@
+</head>
+<body>
+    @RenderBody()
+    @RenderSection("scriptsSection", false)
+</body>
+</html>

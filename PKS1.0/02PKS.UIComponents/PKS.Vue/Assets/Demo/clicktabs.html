@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>筛选</title>
+    <link rel="stylesheet" href="../Js/lib/xvision/xvision.css">
+</head>
+<body>
+<div id="el">
+    <pks:ctabs :titles="titles" :onclick="onclick">
+        <h1 slot="tab1">tab1</h1>
+        <h1 slot="tab2">tab2</h1>
+        <h1 slot="tab3">tab3</h1>
+    </pks:ctabs>
+    
+
+</div>
+    <script src="../Js/lib/jquery/jquery-3.1.1.min.js"></script> 
+    <script src="../Js/vendor.js"></script>
+    <script src="../Js/devUI.js"></script>
+<script type="text/javascript">
+    var vm=PKSUI.bind({
+        el:"#el",
+        data:{
+           titles:["tab1","tab2","tab3"]
+        },
+        methods:{
+            onclick:function(e){
+                alert(e);
+            }
+        },
+        model:"pks:ctabs"
+    });
+    
+</script>
+</body>
+</html>

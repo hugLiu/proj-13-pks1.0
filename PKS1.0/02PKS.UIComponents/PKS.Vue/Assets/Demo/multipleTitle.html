@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>筛选</title>
+    <link rel="stylesheet" href="../Js/lib/xvision/xvision.css">
+    <link rel="stylesheet" href="../Js/lib/bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+    <div id="el">
+        <pks:multipletitle :titles="title" :show=false :data="listdata" :map="map" fontclass="glyphicon glyphicon-star" :onclick="onclicks"></pks:multipletitle>
+    </div>
+
+    <script src="../Js/lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../Js/vendor.js"></script>
+    <script src="../Js/devUI.js"></script>
+    <script src="../Js/lib/xvision/xvision.js"></script>
+    <script type="text/javascript">
+        var _items1 =  [{ "title": "hello", "date": "2-7", "iiid": "well001" },
+            { "title": "hello1", "date": "2-72", "iiid": "well0013" }];
+        var _items2 =  [{ "title": "hello2", "date": "2-71", "iiid": "well001" },
+            { "title": "hello1", "date": "2-72", "iiid": "well0013" }];
+        var _items3 = [{ "title": "hello3", "date": "2-71", "iiid": "well001" },
+            { "title": "hello1", "date": "2-72", "iiid": "well0013" }];
+        var map={ "left": "title", "right": "date", "url": "iiid" };
+
+        var data=[_items1,_items2,_items3];
+        PKSUI.bind({
+            el: "#el",
+            data: {
+                title: ["新闻", "小说", "娱乐"],
+                listdata: data,
+                map:[map,map,map]
+            },
+            methods: {
+                onclicks: function (e) {
+                    alert(e);
+                },
+                onshowmores: function () {
+                    alert("show more")
+                }
+            },
+            model: "pks:multipletitle"
+        });
+    </script>
+</body>
+
+</html>

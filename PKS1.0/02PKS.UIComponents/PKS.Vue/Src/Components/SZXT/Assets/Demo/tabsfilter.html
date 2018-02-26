@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>筛选</title>
+    <link rel="stylesheet" href="../Js/lib/xvision/xvision.css">
+    <link rel="stylesheet" href="../Js/lib/bootstrap/css/bootstrap.css">
+    <style>
+        .jurassic-li-inline{
+            display: inline-block;
+            float: left;
+            margin-right: 20px;
+            font-size: 15px;
+            color: blue;
+        }
+        .jurassic-li-inline.active{
+            color: red
+        }
+    </style>
+</head>
+
+<body>
+    <div id="el">
+       <pks:tabsfilter :data="filterdata" :map="map" :onclick="onclicks"></pks:tabsfilter>
+    </div>
+
+    <script src="../Js/lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../Js/vendor.js"></script>
+    <script src="../Js/devUI.js"></script>
+    <script src="../Js/lib/xvision/xvision.js"></script>
+    <script type="text/javascript">
+               
+        PKSUI.bind({
+            el: "#el",
+            data: {
+                filterdata:[{
+                    name:"十二五",
+                    fl:[2011,2012,2013,2014,2015]
+                },{
+                    name:"十三五",
+                    fl:[2016,2017]
+                }],
+                map:{title:"name",filter:"fl"}
+            },
+            methods: {
+                onclicks: function (e) {
+                    alert(e);
+                }
+            },
+            model: "pks:tabsfilter"
+        });
+    </script>
+</body>
+
+</html>

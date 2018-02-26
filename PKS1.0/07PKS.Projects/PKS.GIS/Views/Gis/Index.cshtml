@@ -1,0 +1,167 @@
+﻿@{
+    ViewBag.Title = "智能勘探工作平台GIS导航";
+}
+<!--
+<link href="~/Content/AppCSS/ToolBarRight.css" rel="stylesheet" />
+<link href="~/Content/AppCSS/Default.css" rel="stylesheet" />
+<link href="~/Content/AppCSS/MapCSS.css" rel="stylesheet" />
+-->
+<div id="mapContent" class="map">
+
+    <script type="text/javascript">
+        autodivheight();
+        function autodivheight() { //自适应
+            //获取浏览器窗口高度
+            var winHeight = 0;
+            if (window.innerHeight)
+                winHeight = window.innerHeight;
+            else if ((document.body) && (document.body.clientHeight))
+                winHeight = document.body.clientHeight;
+            //通过深入Document内部对body进行检测，获取浏览器窗口高度
+            if (document.documentElement && document.documentElement.clientHeight)
+                winHeight = document.documentElement.clientHeight;
+            //自适应为浏览器窗口的高度
+            document.getElementById("mapContent").style.height = winHeight - 20 + "px";
+        }
+        window.onresize = autodivheight; //浏览器窗口发生变化时同时变化DIV高度
+    </script>
+    <script type="text/javascript">
+        var browser = navigator.appName
+        var b_version = navigator.appVersion
+        var version = b_version.split(";");
+        var trim_Version = version[1].replace(/[ ]/g, "");
+        if (browser == "Microsoft Internet Explorer" && (trim_Version == "MSIE6.0" || trim_Version == "MSIE7.0" || trim_Version == "MSIE8.0")) {
+            alert("浏览器版本过低");
+        }
+    </script>
+</div>
+
+
+<style>
+    .leaflet-sidebar {
+        left: 120px;
+        display: none;
+    }
+
+        .leaflet-sidebar.visible {
+            display: block;
+        }
+
+        .leaflet-sidebar .close {
+            z-index: 10000 !important;
+        }
+
+    .leaflet-control-layers img {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+        width: 320px;
+    }
+
+    .popup-table {
+        width: 300px;
+    }
+
+        .popup-table td {
+            font-size: 10px !important;
+        }
+
+    .popup-label {
+        width: 80px;
+    }
+</style>
+
+<div id="sidebarTrap" class="filter-sidebar" style="height:400px;"></div>
+
+<div id="sidebarWell" class="filter-sidebar" style="height:480px;"></div>
+
+<div id="sidebarWorkArea" class="filter-sidebar" style="height:280px;"></div>
+
+<link href="~/Content/Scripts/Maps/leaflet/leaflet.css" rel="stylesheet" />
+<script src="~/Content/Scripts/Maps/leaflet/leaflet-src.js"></script>
+
+<!--fallback-->
+<script src="~/Content/Scripts/Maps/Leaflet.fallback/leaflet.tilelayer.fallback.js"></script>
+
+<!--fullscreen-->
+<link href="~/Content/Scripts/Maps/leaflet.fullscreen/leaflet.fullscreen.css" rel="stylesheet" />
+<script src="~/Content/Scripts/Maps/leaflet.fullscreen/Leaflet.fullscreen.min.js"></script>
+
+<!-- 边栏 -->
+<link href="~/Content/Scripts/Maps/Leaflet.Sidebar/L.Control.Sidebar.css" rel="stylesheet" />
+<script src="~/Content/Scripts/Maps/Leaflet.Sidebar/L.Control.Sidebar.js"></script>
+
+<!--Measure-->
+<script src="~/Content/Scripts/Maps/Leaflet.Measure/leaflet.measure.js"></script>
+<link href="~/Content/Scripts/Maps/Leaflet.Measure/leaflet.measure.css" rel="stylesheet" />
+
+<!--Arrow-->
+<script src="~/Content/Scripts/Maps/Leaflet.arrow/leaflet.polylineDecorator.js"></script>
+
+<!-- MiniMap-->
+<link href="~/Content/Scripts/Maps/Leaflet-MiniMap/Control.MiniMap.css" rel="stylesheet" />
+<script src="~/Content/Scripts/Maps/Leaflet-MiniMap/Control.MiniMap.js"></script>
+
+<!-- GroupLayerControl-->
+<link href="~/Content/Scripts/Maps/Leaflet.groupedlayercontrol/leaflet.groupedlayercontrol.css" rel="stylesheet" />
+<script src="~/Content/Scripts/Maps/Leaflet.groupedlayercontrol/leaflet.groupedlayercontrol.js"></script>
+
+<!-- Arc-->
+<script src="~/Content/Scripts/Maps/Leaflet.Arc/dist/leaflet-arc.min.js"></script>
+<script src="~/Content/Scripts/Maps/Leaflet.Arc/arc.js"></script>
+
+<!-- Location-->
+<link href="~/Content/Scripts/Maps/Leaflet.position/src/leaflet-control-position.css" rel="stylesheet">
+<script src="~/Content/Scripts/Maps/Leaflet.position/src/leaflet-control-position.js"></script>
+
+<!--zoomHome-->
+<link href="~/Content/Scripts/Maps/leaflet.zoomhome/leaflet.zoomhome.css" rel="stylesheet" />
+<script src="~/Content/Scripts/Maps/leaflet.zoomhome/leaflet.zoomhome.min.js"></script>
+
+<!-- 右键菜单-->
+<link href="~/Content/Scripts/Maps/Leaflet.contextmenu-master/dist/leaflet.contextmenu.css" rel="stylesheet" />
+<script src="~/Content/Scripts/Maps/Leaflet.contextmenu-master/dist/leaflet.contextmenu.js"></script>
+
+<!-- box selector-->
+<link href="~/Content/Scripts/Maps/Leaflet.boxselector/src/selector.css" rel="stylesheet" />
+<script src="~/Content/Scripts/Maps/Leaflet.boxselector/src/selector.js"></script>
+
+<!--搜索-->
+<link href="~/Content/Scripts/Maps/leaflet-search-master/dist/leaflet-search.src.css" rel="stylesheet" />
+<script src="~/Content/Scripts/Maps/leaflet-search-master/dist/leaflet-search.src.js"></script>
+
+<!--绘制工具-->  <!--zhanglingling changed at 20170315 because this plugin incompatible with Leaflet Tooltip-->
+<!--<link href="Scripts/Maps/Leaflet.draw/dist/leaflet.draw.css" rel="stylesheet" />
+<script src="Scripts/Maps/Leaflet.draw/dist/leaflet.draw-src.js"></script>-->
+<!--测量工具-->
+<!--<link href="Scripts/Maps/Leaflet.MeasureControl/leaflet.measurecontrol.css" rel="stylesheet" />
+<script src="Scripts/Maps/Leaflet.MeasureControl/leaflet.measurecontrol.js"></script>-->
+<!--
+<link href="~/Content/AppCSS/IphoneCss.css" rel="stylesheet" />
+<script src="~/Content/AppJS/IphoneStyle.js"></script>
+<script src="~/Content/AppJS/touchable.js"></script>
+-->
+
+<script src="~/Content/AppJS/UtilityTools.js"></script>
+<!--<script src="AppJS/LineInfo.js"></script>
+<script src="AppJS/FacilitiesInfo.js"></script>-->
+<script src="~/Content/Scripts/initialMap.js"></script>
+<script src="~/Content/Scripts/well.js"></script>
+<script src="~/Content/Scripts/trap.js"></script>
+<script src="~/Content/Scripts/basin.js"></script>
+<script src="~/Content/Scripts/firstSu.js"></script>
+<script src="~/Content/Scripts/secondSu.js"></script>
+<script src="~/Content/Scripts/workArea.js"></script>
+<script src="~/Content/scripts/map.js"></script>
+
+<link rel="stylesheet" href="~/Content/bootstrap.css" />
+<link href="~/Content/Scripts/bootstrap-select-1.12.4/css/bootstrap-select.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Content/Scripts/bootstrap-select-1.12.4/js/bootstrap-select.js"></script>
+<script src="~/Content/Scripts/Maps/geoJsonFilter/L.geojsonfilter.js"></script>
+
+
+

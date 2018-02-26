@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "图片浏览器";
+}
+<link href="~/Content/lib/viewer/viewer.min.css" rel="stylesheet" />
+<link href="~/Content/lib/elastislide/css/elastislide.css" rel="stylesheet" />
+<link href="~/Content/styles/comment.css" rel="stylesheet" />
+<script src="~/Content/lib/viewer/viewer.min.js"></script>
+<script src="~/Content/lib/elastislide/js/modernizr.custom.17475.js"></script>
+<script src="~/Content/lib/elastislide/js/jquerypp.custom.js"></script>
+<script src="~/Content/lib/elastislide/js/jquery.elastislide.js"></script>
+
+<style>
+    .jurassic-singleimg-head {
+        text-align: center;
+    }
+
+    .jurassic-singleimg-bottom p {
+        display: none;
+    }
+</style>
+
+<div class="row">
+    <div style="text-align:center">
+        <h1 id="title"></h1>
+    </div>
+    <div style="text-align:center;margin:20px 0px;">
+        <span>作者：</span><span id="author"></span>
+        <span style="margin-left:30px;">创建时间：</span><span id="createdate"></span>
+
+    </div>
+</div>
+<div class="row" style="">
+    @*<div class="col-md-8 col-md-offset-2" id="ptimgcontainer" style="margin-top:20px">
+            <pks:image :itemwidth="200" :itemheight="150" :items="items" :id="'MyImg'"></pks:image>
+            <pks:singleimg :item="data" height="400px;" width="1000px" :map="map" :onclick="onclick"></pks:singleimg>
+
+        </div>*@
+    <div id="ptimgcontainer" class="jurassic-singleimg-full">
+        <pks:singleimg :item="data" :map="map" :onclick="onclick"></pks:singleimg>
+    </div>
+
+</div>
+<div id="remarkcontainer" style="margin-top:50px">
+    <pks:remark2 :id="'remark'" :iiid="iiid"></pks:remark2>
+</div>
+<script>
+
+    var config =@Html.Raw(@ViewBag.data);
+    var imgData = { url: config.dataSource, thumbnail: config.dataSource, title: config.title, iiid: config.iiid };
+    var vm = PKSUI.bind({
+        el: "#ptimgcontainer",
+        data: {
+            data: imgData,
+            map: { "url": "url", "thumbnail": "thumbnail", "bottom": "title", "param": "iiid" }
+        },
+        methods: {
+            onclick: function (e) {
+                // alert(e);
+            }
+        },
+        model: 'pks:singleimg'
+    });
+
+    var iiid = getPageParam("iiid");
+    if (iiid) {
+        var vm2 = PKSUI.bind({
+            el: "#remarkcontainer",
+            data: {
+                iiid: iiid
+            },
+            model: 'pks:remark2'
+        });
+    }
+    $(document).ready(function () {
+        $('#title').html(config.title);
+        document.title = config.title;
+        $('#author').html(config.author);
+        if (config.createddate) {
+            //$('#original_createdate').html(data.createdate);
+            var date = moment(config.createddate, "YYYY-MM-DDTHH:mm:ss.SSSZ").toDate();
+            $('#createdate').html(date.format("yyyy-MM-dd hh:mm:ss"));
+        }
+    });
+</script>
+

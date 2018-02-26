@@ -1,0 +1,56 @@
+﻿
+@{
+//ViewBag.Title = "PDF文件浏览器";
+}
+<link href="~/Content/styles/comment.css" rel="stylesheet" />
+<div class="row">
+    <div style="text-align:center">
+        <h1 id="title"></h1>
+    </div>
+    <div style="text-align:center;margin:20px 0px;">      
+        <span>作者：</span><span id="author"></span>        
+        <span style="margin-left:30px;">创建时间：</span><span id="createdate"></span>       
+            
+    </div>
+</div>
+
+<div style="width: 100%;height:800px" id="ptpdfcontainer">
+    <pks:pdf :pdfpath="pdfpath" :id="'mypdf'" :pdfshowurl="pdfshowurl"></pks:pdf>
+</div>
+<div id="remarkcontainer" style="margin-top: 50px">
+    <pks:remark2 :id="'remark'" :iiid="iiid"></pks:remark2>
+</div>
+<script>
+    var config =@Html.Raw(@ViewBag.data);
+    var vm = PKSUI.bind({
+        el: "#ptpdfcontainer",
+        data: {
+            pdfpath: config.dataSource,
+            pdfshowurl: '/content/lib/pdfjs/ptpdf.show.html'
+        },
+        model: 'pks:pdf'
+    });
+
+    var iiid = getPageParam("iiid");
+    if (iiid) {
+        var vm2 = PKSUI.bind({
+            el: "#remarkcontainer",
+            data: {
+                iiid: iiid
+            },
+            model: 'pks:remark2'
+        });
+    }
+
+    $(document).ready(function () {
+        $('#title').html(config.title);
+        document.title = config.title;
+        $('#author').html(config.author);
+        if (config.createddate) {
+            //$('#original_createdate').html(data.createdate);
+            var date = moment(config.createddate, "YYYY-MM-DDTHH:mm:ss.SSSZ").toDate();
+            $('#createdate').html(date.format("yyyy-MM-dd hh:mm:ss"));
+        }
+    });
+</script>
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>列表项</title>
+    <link rel="stylesheet" href="../Js/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../Js/lib/xvision/xvision.css">
+
+</head>
+
+<body>
+    <div id="el">
+        <pks:filterlist :showsearchbtn="true" :items="items" :searchbtnclick="onclicks" :querybtnclick="oncallback" :resultnum="resultnum"></pks:filterlist>
+        <!--<pks:filterlist :showsearchbtn="true" :items="items" :searchbtnclick="onclicks"></pks:filterlist>-->
+    </div>
+    <script src="../Js/lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../Js/lib/xvision/xvision.js"></script>
+    <script src="../Js/vendor.js"></script>
+    <script src="../Js/devUI.js"></script>
+
+
+    <script type="text/javascript">
+        var _items = [{
+            catelog: "地区",
+            type: "checkbox",
+            list: ["库车凹陷1", "库车凹陷2", "库车凹陷3", "库车凹陷4", "库车凹陷5", "库车凹陷6"]
+        },
+        {
+            catelog: "评价类型",
+            type: "radio",
+            list: ["评价1", "评价2", "评价3"]
+        },
+        {
+            catelog: "一级构造单元",
+            type: "checkbox",
+            list: ["一级构造单元1", "一级构造单元2", "一级构造单元3", "一级构造单元4", "一级构造单元5", "一级构造单元6"]
+        }];
+
+        PKSUI.bind({
+            el: "#el",
+            data: {
+                items: _items,
+                resultnum: 0
+            },
+            methods: {
+                onclicks: function (e) {
+                    alert(e.type + e.content);
+                },
+
+                oncallback: function (e) {
+                    alert("query-btn-clicked");
+                    this.resultnum = 666;
+                    // $(e).each(function (index, el) {
+                    //     alert(el.catelog+','+el.value);
+                    // })
+                }
+            },
+            model: "pks:filterlist"
+        });
+    </script>
+</body>
+
+</html>

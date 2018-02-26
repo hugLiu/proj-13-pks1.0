@@ -1,0 +1,384 @@
+/**********************************************************************************************************
+ *** raster ***
+ **********************************************************************************************************/
+.jurassic-container{
+    position:relative;
+    padding-left:15px;
+    padding-right:15px;
+}
+.jurassic-section {
+    margin-bottom:10px;
+}
+.jurassic-row{
+    position: relative;
+}
+.jurassic-row:before{
+    display: block;
+    content: "";
+}
+.jurassic-row:after{
+    display: block;
+    content: "";
+    clear: both;
+}
+.jurassic-row [class^=jurassic-col-]{
+    position: relative;
+    float: left;
+}
+.jurassic-margin-container{
+    margin:7px;
+}
+.jurassic-col-12 {
+    width: 100%;
+}
+.jurassic-col-11 {
+    width: 91.66666667%;
+}
+.jurassic-col-10 {
+    width: 83.33333333%;
+}
+.jurassic-col-9 {
+    width: 75%;
+}
+.jurassic-col-8 {
+    width: 66.66666667%;
+}
+.jurassic-col-7 {
+    width: 58.33333333%;
+}
+.jurassic-col-6 {
+    width: 50%;
+}
+.jurassic-col-5 {
+    width: 41.66666667%;
+}
+.jurassic-col-4 {
+    width: 33.33333333%;
+}
+.jurassic-col-3 {
+    width: 25%;
+}
+.jurassic-col-2 {
+    width: 16.66666667%;
+}
+.jurassic-col-1 {
+    width: 8.33333333%;
+}
+/**********************************************************************************************************
+ *** text ***
+ **********************************************************************************************************/
+.jurassic-text-left{
+    text-align: left;
+}
+.jurassic-text-center{
+    text-align: center;
+}
+.jurassic-text-right{
+    text-align: right;
+}
+/**********************************************************************************************************
+ *** additional ***
+ **********************************************************************************************************/
+.jurassic-inline{
+    display: inline-block;
+}
+.jurassic-split-line{
+    margin-left: 3px;
+    margin-right: 3px;
+    border-left:1px solid rgb(212,212,212);
+    border-right:1px solid rgb(242,242,242);
+}
+.jurassic-caption{
+    font-weight: bold;
+}
+/**********************************************************************************************************
+ *** label ***
+ **********************************************************************************************************/
+.jurassic-label input{
+    font-weight: normal;
+    margin: 0px;
+    padding: 0px;
+}
+label,
+.jurassic-label,
+.jurassic-label input{
+    vertical-align: middle;
+}
+/**********************************************************************************************************
+ *** tab ***
+ **********************************************************************************************************/
+.jurassic-tab{}
+.jurassic-tab-header{
+    padding-left: 5px;
+    border-bottom: 1px solid rgb(247,147,131);
+}
+.jurassic-tab-body{}
+.jurassic-tab-btn{
+    display: inline-block;
+    margin-left: 5px;
+    padding: 5px 18px;
+    border-left:1px solid rgb(214,214,214);
+    border-top:1px solid rgb(214,214,214);
+    border-right:1px solid rgb(214,214,214);
+    border-top-left-radius: 3px;
+    border-top-right-radius:3px;
+}
+.jurassic-tab-container{
+    display: none;
+    padding: 0px 15px;
+    transition: all 300ms;
+}
+.jurassic-tab-btn.active{
+    margin-bottom: -1px;
+    border-left-color: rgb(247,147,131);
+    border-top-color:rgb(247,147,131);
+    border-right-color:rgb(247,147,131);
+    border-bottom:1px solid rgb(255,255,255);
+}
+.jurassic-tab-container.active{
+    display: block;
+}
+/**********************************************************************************************************
+ *** panel ***
+ **********************************************************************************************************/
+.jurassic-panel{}
+.jurassic-panel-header{
+    padding: 3px 0px;
+    border-bottom: 1px solid rgb(214,214,214);
+}
+.jurassic-panel-body{
+    padding: 0px 5px;
+}
+.jurassic-panel-logo{
+    padding-left: 10px;
+    padding-right: 8px;
+}
+.jurassic-panel-title{
+    color: rgb(5,80,230);
+    font-size: 16px;
+    font-weight: bold;
+}
+.jurassic-tab-panel-title{
+    color:rgb(187,187,187);
+    font-size: 14px;
+    cursor: pointer;
+}
+.jurassic-tab-panel-title.active{
+    color: rgb(5,80,230);
+    font-size: 16px;
+    font-weight: bold;
+}
+.jurassic-panel-more{
+    margin-right: 10px;
+    font-size: 12px;
+}
+.jurassic-tab-panel-container{
+    display: none;
+}
+.jurassic-tab-panel-container.active{
+    display: block;
+}
+/**********************************************************************************************************
+ *** list ***
+ **********************************************************************************************************/
+.jurassic-list,
+.jurassic-list-horizontal{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+.jurassic-list-item{}
+.jurassic-list-horizontal li,
+.jurassic-list-horizontal .jurassic-list-item{
+    display: inline-block;
+}
+/**********************************************************************************************************
+ *** news ***
+ **********************************************************************************************************/
+.jurassic-news{
+    padding: 8px 0px;
+    border-bottom: 1px dotted rgb(193,193,193);
+}
+.jurassic-news-brief{
+    padding-left: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.jurassic-news-text{
+    font-size: 14px;
+    color: rgb(85,85,85);
+}
+.jurassic-news-text:focus,
+.jurassic-news-text:hover{
+    text-decoration: none;
+    color:rgb(247,147,131);
+}
+.jurassic-news-text:before{
+    padding-right: 5px;
+    content: "●";
+    font-size: 12px;
+    color: rgb(247,147,131);
+}
+.jurassic-news-date{
+    margin-right: 16px;
+    font-size: 11px;
+    color:rgb(153,153,153);
+}
+/**********************************************************************************************************
+ *** search-component ***
+ **********************************************************************************************************/
+.jurassic-search-component{
+    padding: 0px 15px 15px 15px;
+    border-top: 2px solid rgb(255,166,60);
+    border-bottom: 1px solid rgb(221,221,221);
+    border-left:1px solid rgb(221,221,221);
+    border-right:1px solid rgb(221,221,221);
+}
+.jurassic-search-panel{
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 8px;
+    text-align: center;
+}
+.jurassic-search-component .jurassic-search-panel{
+    background-color: rgb(246,246,246);
+}
+.jurassic-search-filter{
+    font-size: 12px;
+    line-height: 3.2em;
+}
+.jurassic-search-filter .jurassic-label{
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.jurassic-search-filter-base{
+    border-bottom: 1px dotted rgb(230,230,230);
+}
+.jurassic-search-filter-more{
+    display: none;
+}
+.jurassic-search-display{
+    font-size: 12px;
+    line-height: 2.3em;
+    background-color: rgb(245,249,250);
+}
+.jurassic-search-filter-info{
+    display: inline-block;
+    padding: 2px;
+    border: 1px solid rgb(255,102,0);
+    line-height: 1.2em;
+    margin-right: 5px;
+}
+.jurassic-search-filter-info>span:nth-child(2n+2){
+    color:rgb(255,102,0);
+}
+.jurassic-search-filter-info>img{
+    margin-left: 2px;
+}
+.jurassic-search-result{
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.jurassic-search-result>span:nth-child(2n+1){
+    margin-right: 2px;
+    color:rgb(255,102,0);
+}
+.jurassic-search-display-clear{
+    color:rgb(135,207,250);
+}
+.jurassic-search-component label,
+.jurassic-search-component .jurassic-label {
+    margin-top:0px;
+    margin-bottom:0px;
+    line-height:1em;
+    font-weight:normal;
+}
+/**********************************************************************************************************
+ *** search ***
+ **********************************************************************************************************/
+.jurassic-search {
+    display: inline-block;
+    width: 376px;
+}
+.jurassic-search-interaction{
+    display: inline-block;
+}
+.jurassic-search-interaction-panel{
+    display: inline-block;
+}
+.jurassic-search-input{
+    width: 320px;
+    height: 33px;
+    line-height: 33px;
+    text-indent: 8px;
+    border-top: 1px solid rgb(183,183,183);
+    border-bottom: 1px solid rgb(183,183,183);
+    border-left: 1px solid rgb(183,183,183);
+    border-right:none;
+    outline: none;
+}
+.jurassic-search-auto-complete-container{
+    position: relative;
+}
+.jurassic-search-btn{
+    width: 56px;
+    height: 33px;
+    color:rgb(255,255,255);
+    background: linear-gradient(to bottom,rgb(255,153,32),rgb(255,124,52));
+    border: none;
+    outline: none;
+    font-weight: bold;
+}
+.jurassic-search-btn:hover{
+    background: linear-gradient(to bottom,rgb(245,166,4),rgb(255,138,67));
+}
+
+/**********************************************************************************************************
+ *** sort ***
+ **********************************************************************************************************/
+.jurassic-sort{}
+ 
+.jurassic-sort-line {
+    height: 35px;
+    background: #F1F1F1;
+    padding: 6px 8px;
+    border-bottom: 1px solid #E7E3E7;
+    zoom: 1;
+}
+.jurassic-sort-item a {
+    text-decoration: none;
+    font-weight: normal;
+    float: left;
+    padding: 0 10px;
+    height: 23px;
+    border: 1px solid #CCC;
+    margin-right: -1px;
+}
+
+.jurassic-sort-a-curr {
+  background: red;
+  color: #FFF;
+  border-color: red;
+}
+
+.jurassic-sort-item a:focus {
+  color: white;
+}
+/*---------------------------------------list table*/
+.jurassic-tableList {
+	width: 100%;
+	margin: 5px auto;
+	
+	}
+   .jurassic-tableList,.jurassic-tableList td {border: solid 1px #d6d6d6;border-collapse: collapse;}
+   .jurassic-tableList td {
+	   height: 28px;
+	   line-height: 28px;
+	   text-align: center;
+	   }
+	  .headTd td {background: #f1f1f1;font-weight: bold;color: #6471a2;font-size: 14px;height: 30px;line-height: 30px;}
+	 .hide{display:none;}
+
+
+

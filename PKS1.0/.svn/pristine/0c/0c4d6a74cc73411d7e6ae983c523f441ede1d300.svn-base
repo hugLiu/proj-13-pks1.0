@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1D533B92-4942-415B-A578-24AF263447CE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PKS.Install</RootNamespace>
+    <AssemblyName>PKS.Install</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SZXT|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\SZXT\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Properties\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database\创建PKS库%28SQLServer%29.sql" />
+    <Content Include="Database\创建框架库%28SQLServer%29.sql" />
+    <None Include="Database\安装数据库%28SQLServer%29.bat" />
+    <None Include="Database\建立工作目录.bat" />
+    <None Include="Database\配置防火墙.bat" />
+    <Content Include="ElasticSearch\Data.txt" />
+    <None Include="ElasticSearch\建立工作目录.bat" />
+    <None Include="ElasticSearch\配置Kibana防火墙.bat" />
+    <None Include="ElasticSearch\配置ES防火墙.bat" />
+    <None Include="MemCached\管理员安装MemCached.bat" />
+    <None Include="MemCached\配置防火墙.bat" />
+    <None Include="MongoDB\mongodb%28本地%29.cfg" />
+    <None Include="MongoDB\Page.json" />
+    <Content Include="MongoDB\User.js" />
+    <Content Include="MongoDB\Data.js" />
+    <None Include="MongoDB\Shell导入数据.bat" />
+    <None Include="InitVariables.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ElasticSearch\elasticsearch.yml" />
+    <None Include="ElasticSearch\重启elasticsearch服务.bat" />
+    <None Include="ElasticSearch\管理员安装elasticsearch.bat" />
+    <None Include="ElasticSearch\管理员安装Node.bat" />
+    <None Include="MongoDB\mongodb.cfg" />
+    <None Include="MongoDB\建立工作目录.bat" />
+    <None Include="MongoDB\管理员配置Mongo服务.bat" />
+    <Content Include="WebSites\PKS.WebAPI\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WebSites\PKS.SZXT\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="MongoDB\配置防火墙.bat" />
+    <Content Include="WebSites\exclude.txt" />
+    <Content Include="WebSites.Debug\PKS.GIS\Web.config" />
+    <None Include="WebSites.Debug\PKS.MgmtServices.Host\PKS.MgmtServices.Host.exe.config" />
+    <None Include="WebSites.Debug\PKS.PortalMgmt\Web.config" />
+    <None Include="WebSites.Debug\PKS.Portal\Web.config" />
+    <None Include="WebSites.Debug\PKS.Sooil\Web.config" />
+    <None Include="WebSites.Debug\PKS.SZXT\Web.config" />
+    <None Include="WebSites.Debug\PKS.WebAPI\Web.config" />
+    <Content Include="WebSites\PKS.GIS\Web.config" />
+    <None Include="WebSites\PKS.MgmtServices.Host\PKS.MgmtServices.Host.exe.config" />
+    <Content Include="WebSites\PKS.PortalMgmt\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WebSites\PKS.Portal\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WebSites\PKS.Sooil\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WebSites\管理服务宿主发布流程.txt" />
+    <None Include="WebSites\发布管理服务宿主.bat" />
+    <None Include="WebSites\发布Web配置文件.bat" />
+    <None Include="WebSites\建立工作目录.bat" />
+    <None Include="WebSites\管理员运行发布管理服务宿主.bat" />
+    <None Include="WebSites\管理员运行安装管理服务宿主.bat" />
+    <None Include="WebSites\配置防火墙.bat" />
+    <None Include="安装说明.docx" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>筛选</title>
+    <link rel="stylesheet" href="../Js/lib/xvision/xvision.css">
+    <link rel="stylesheet" href="../Js/lib/bootstrap/css/bootstrap.min.css">
+    <style>
+        .jurassic-filter-card{
+            border-top: 2px solid sandybrown;
+            border-bottom: 2px solid sandybrown;
+            border-left: 1px solid lightgray;
+            border-right: 1px solid lightgray;
+        }
+        .jurassic-filter5th{
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .fiveYear{
+             text-align: left;
+        }
+        .jurassic-click>span{
+            border: 1px solid lightgray;
+            background-color: lightgoldenrodyellow;
+            border-radius: 17px;
+            display: inline-block;
+            height: 30px;
+            line-height: 30px!important;
+            width: 30px;
+            margin: auto 20px;
+            padding: auto 5px;
+            color: gray;
+        }
+        .jurassic-click>span:hover{
+            color: sandybrown;
+            background-color: lightgrey;
+        }
+        .jurassic-click{
+            padding-top:2px 
+        }
+        .fiveYear>span{
+            display: inline-block;
+            height: 40px;
+            margin: 0px 20px;
+            padding: 0px 5px;
+        }
+        .jurassic-pointer span:hover{
+            cursor: pointer;
+        }
+        .selectbo>span.active,.fiveYear>span.active,.filter span.active{
+            color: blue;
+            font-weight: 700
+        }
+        .jurassic-filter-bottom{
+            border-bottom: 1px dotted lightblue;
+        }
+        .jurassic-filter-title{
+            font-weight: 700
+        }
+        .jurassic-filter-fivecolor{
+            color: sandybrown;
+        }
+        
+    </style>
+</head>
+<body>
+<div id="el" style="width: 1100px;margin:20px auto;">
+    <pks:complex :filters="filters" :size="size" :onboclick="onboclick" :search="onsearch"></pks:complex>
+</div>
+    <script src="../Js/lib/jquery/jquery-3.1.1.min.js"></script> 
+    <script src="../Js/vendor.js"></script>
+    <script src="../Js/devUI.js"></script>
+<script type="text/javascript">
+    var vm=PKSUI.bind({
+        el:"#el",
+        data:{
+          filters:[{
+              name:"井类",
+              options:["well1","well2"]
+          },{
+              name:"井别",
+              options:["o1","o2","o3"]
+          }],
+          size:4
+         
+        },
+        methods:{
+          onboclick:function(e){
+            alert(e);
+          },
+          onsearch:function(e){
+            var bo={
+              name:"井位",
+              bos:["bo1","bo2","bo3","bo4","bo5","bo6","bo7","bo8","bo9","bo10","bo11","bo12"]
+          };
+          return bo;
+          }
+        },
+        model:"pks:complex"
+    });
+    
+</script>
+</body>
+</html>

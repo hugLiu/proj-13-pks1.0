@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>下拉</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="../../js/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../js/lib/bootstrap-table/bootstrap-table.css">
+
+    <script src="../../js/lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../../js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../js/lib/bootstrap-table/bootstrap-table.js"></script>
+
+      <script src="../../Js/vendor.js"></script>
+    <script src="../../Js/devUI.js"></script>
+
+</head>
+
+<body>
+    <div class="container" id="container">
+      
+        <pttable :id="'pttable'" :datasource="datasource" :columnoptions="columnoptions" :tableoptions="tableoptions"></pttable>
+      <div class="row">
+            <h1>通过赋值url加载数据</h1>
+            <p>
+                dataurl 返回数据格式：<br>
+                若服务端分页，必需带上total,在参数tableoption里必须带上sidePagination：true<br>
+                数据格式形如<br>
+                {<br>
+                "total": 800,<br>
+                "rows": []<br>
+                }<br>
+                若客户端分页，返回数组<br>
+                
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    
+/*dataurl 返回数据格式：
+若服务端分页，必需带上total,在参数tableoption里必须带上sidePagination："server"
+数据格式形如
+{
+  "total": 800,
+  "rows": []
+}
+若客户端分页，返回为数据数组
+*/
+//../../../Mock/pttable-1.json
+ /*此示例演示通过赋值url加载数据*/ 
+    var vm = UIDev.bind({
+        el: "#container",
+        data: {
+            datasource: [{
+                name:"井1",
+                url:"http://localhost:9012/demo/getdata" //服务端分页
+            },{
+                name:"井2",
+                url:"http://localhost:9012/demo/getdata?clientpage=true" //客户端分页
+            }],
+            tableoptions: [{
+                "name": "井1",
+                "tableoption": {
+                    maintainSelected: true,
+                    pageSize: 10,                   
+                    // pagination: false,
+                    // paginationDetailHAlign: "left",
+                    // paginationHAlign: "right",
+                    // paginationLoop: true,
+                    // paginationNextText: "&rsaquo;",
+                    // paginationPreText: "&lsaquo;",
+                    // paginationVAlign: "bottom",
+                     showPaginationSwitch: false, //表格表头右上方按钮控制分页是否显示
+                    // singleSelect: false,
+                    sortable: true,
+                    totalField: "total",
+                    undefinedText: '-',
+                    sidePagination:"server"
+                }               
+            } ,{
+                    name:"井2",
+                    "tableoption":{
+                         
+                    }
+                }],
+            columnoptions: [{
+                "name": "井1",
+                "columnoption": [
+                    [{
+                            "field": "name",
+                            "align": "center",
+                            "order": "asc",
+                            "radio": false,
+                            "sortable": false,
+                            "title": "名称name",
+                            rowspan: 2
+                        },
+                        {
+                            align:"center",
+                            title: "信息",
+                            colspan:3
+                        }
+                    ],
+                    [ {
+                            field: "createdtime",
+                            title: "日期"
+                        },
+                        {
+                            field: "username",
+                            title: "用户名"
+                        },
+                        {
+                            field: "address",
+                            title: "地址"
+                        }
+                    ]
+                ]
+            }, {
+                "name": "井2",
+                "columnoption": [
+                    [{
+                            "field": "name",
+                            "align": "center",
+                            "order": "asc",
+                            "radio": false,
+                            "sortable": false,
+                            "title": "名称name"
+                        },
+                        {
+                            field: "createdtime",
+                            title: "日期"
+                        },
+                        {
+                            field: "username",
+                            clickToSelect: true,
+                            title: "用户名"
+                        },
+                        {
+                            field: "address",
+                            title: "地址"
+                        }
+                    ]
+                ]
+            }]
+        },
+        model: 'pttable'
+    });
+</script>

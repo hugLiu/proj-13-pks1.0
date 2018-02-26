@@ -1,0 +1,5 @@
+1. 打开PKS.MgmtTools.sln;
+2. 编译PKS.MgmtServices.Host;
+3. 运行PKS.Install\WebSites\发布管理服务宿主.bat;
+4. 把D:\PKSInstall\PKS.MgmtServices.Host文件夹复制到服务器D:\PKSInstall\WebSites下;
+5. 在服务器D:\PKSInstall\WebSites下运行管理员运行发布管理服务宿主.bat;

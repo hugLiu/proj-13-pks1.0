@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>筛选</title>
+    <script src="../Js/lib/jquery/jquery-3.1.1.min.js"></script> 
+    <script src="../Js/UIDev.js"></script>
+</head>
+<body>
+<div id="el">
+    <pks:demo :dd="dt"></pks:demo>
+    <demo :dd="dt1"></demo>
+
+</div>
+
+<script type="text/javascript">
+    var vm=UIDev.bind({
+        el:"#el",
+        data:{
+            dt:"hello vue.js",
+            dt1:"hello vue.js"
+        },
+        model:"demo"
+    });
+    
+</script>
+</body>
+</html>

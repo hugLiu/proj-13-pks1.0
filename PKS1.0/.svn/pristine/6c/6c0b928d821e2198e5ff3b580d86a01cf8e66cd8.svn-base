@@ -1,0 +1,12 @@
+﻿systemLog:
+  destination: file
+  path: "D:\\PKSData\\MongoDB\\Logs\\mongodb.log"
+storage:
+  dbPath: "D:\\PKSData\\MongoDB\\Data"
+  journal:
+    enabled: true
+net:
+  bindIp: 127.0.0.1
+  port: 27017
+setParameter:
+  enableLocalhostAuthBypass: false

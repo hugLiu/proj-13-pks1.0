@@ -1,0 +1,30 @@
+[
+  {
+    "tablename": "井1",
+    "data": [
+      {
+        "name": "名称1",
+        "createdtime": "2012-2-2 13:30:30",
+        "username": "用户1"
+
+      },
+      {
+        "name": "名称2",
+        "createdtime": "2012-2-2 13:30:30",
+        "username": "用户2"
+
+      }
+    ]
+  },
+  {
+    "tablename": "井2",
+    "data": [
+      {
+        "name": "井2-名称1",
+        "createdtime": "2012-2-2 13:30:30",
+        "username": "用户1",
+        "address": "地址1"
+      }
+    ]
+  }
+] 

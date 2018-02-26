@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>筛选</title>
+    <link rel="stylesheet" href="../Js/lib/xvision/xvision.css">
+    <link rel="stylesheet" href="../Js/lib/bootstrap/css/bootstrap.css">
+    <style>
+        .jurassic-listbox {
+            float: left;
+            margin:10px 15px;
+            padding: 10px;
+            background: #f6f6f6;
+            width: 260px;
+            position: relative;
+            list-style-type: none;
+        }
+        
+        .jurassic-listimg {
+            float: left;
+            width: 260px;
+            height: 165px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .jurassic-listimg img {
+            background-color: #333;
+            width: 240px;
+            height: 165px;
+            top: 0;
+            left: 0;
+        }
+        
+        img {
+            border: 0 none;
+            vertical-align: top;
+        }
+        
+        .jurassic-iteminfo {
+            top: 165px;
+        }
+        
+        .jurassic-iteminfo p {
+            margin-top: 175px;
+            padding-left: 8px;
+            color: gray
+        }
+    </style>
+</head>
+
+<body>
+    <div id="el">
+        <pks:imglist :data="data" :map="map" :onclick="onclick"></pks:imglist>
+    </div>
+    <script src="../Js/lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../Js/vendor.js"></script>
+    <script src="../Js/devUI.js"></script>
+    <script src="../Js/lib/xvision/xvision.js"></script>
+    <script type="text/javascript">
+    var lt={src:"../Js/lib/elastislide/images/large/1.jpg",name:"BY35-2-3",iiid:"by2018"}
+    var _data=[lt,lt,lt,lt,lt,lt,lt,lt,];
+        PKSUI.bind({
+            el:"#el",
+            data:{
+                data:_data,
+                map:{top:"src",bottom:"name",param:"iiid"}
+            },
+            methods:{
+                onclick:function(e){
+                    alert(e);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
